@@ -37,8 +37,8 @@ public class MailController {
 
     })
     public ResponseEntity<BaseResponse> sendMail(@RequestBody @Valid Mail mail) {
-        BaseResponse response = service.encolarMail(mail);
-        return Responses.responseEntity(response);
+        service.sendMail(mail);
+        return Responses.successEntity("Enviado correctamente");
     }
 
     @PostMapping("/immediate")
