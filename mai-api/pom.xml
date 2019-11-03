@@ -13,7 +13,6 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-
     <properties>
         <start-class>com.heystyles.mail.api.MailApp</start-class>
     </properties>
