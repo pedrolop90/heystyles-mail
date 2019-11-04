@@ -17,7 +17,7 @@ pipeline {
         stage ('install repo home') {
                  steps {
                     sh 'cd /home/ubuntu/heystyles-mail'
-                    sh 'git pull'
+                    sh 'git pull origin/develop'
                     sh 'mvn install'
                }
          }
