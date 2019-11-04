@@ -4,7 +4,7 @@ pipeline {
     stages {
          stage ('install core') {
               steps {
-                  sh 'cd mai-api'
+                  sh 'cd mail-core'
                   sh 'mvn install'
              }
          }
@@ -16,7 +16,7 @@ pipeline {
         }
         stage ('install client') {
              steps {
-                 sh 'cd mail-core'
+                 sh 'cd mail-client'
                  sh 'mvn install'
              }
          }
