@@ -16,7 +16,7 @@ pipeline {
         }
         stage ('deploy') {
            steps {
-                sh './var/lib/jenkins/scripts/heystyles_mail.sh'
+                sh './jenkins/scripts/heystyles_mail.sh'
            }
         }
     }
