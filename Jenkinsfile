@@ -14,16 +14,10 @@ pipeline {
                  sh 'mvn install'
             }
         }
-        stage ('install repo home') {
-                 steps {
-                    sh 'cd /home/ubuntu/heystyles-mail'
-                    sh 'git pull origin develop'
-                    sh 'mvn install'
-               }
-         }
          stage ('deploy') {
             steps {
-                sh '/usr/bin/java -jar /home/ubuntu/heystyles-mail/mai-api/target/mai-api-1.0.0-SNAPSHOT.jar'
+                sh 'sudo su'
+                sh 'systemctl restart heystyles_mail.service'
             }
          }
     }
