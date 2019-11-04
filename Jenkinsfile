@@ -16,7 +16,7 @@ pipeline {
         }
         stage ('deploy') {
            steps {
-                sh 'sudo /var/lib/jenkins/scripts/heystyles_mail.sh'
+                sh '/var/lib/jenkins/scripts/heystyles_mail.sh'
            }
         }
     }
