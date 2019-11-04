@@ -14,5 +14,11 @@ pipeline {
                  sh 'mvn install'
             }
         }
+        stage ('install client') {
+             steps {
+                 sh 'cd mail-core'
+                 sh 'mvn install'
+             }
+         }
     }
 }
