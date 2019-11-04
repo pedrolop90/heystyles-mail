@@ -2,15 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage ('install') {
+         stage ('install core') {
+              steps {
+                  sh 'cd mail-core'
+                  sh 'mvn install'
+             }
+         }
+        stage ('install api') {
             steps {
+                 sh 'cd ..'
                  sh 'mvn install'
             }
         }
          stage ('deploy') {
             steps {
-                sh 'cd mai-api/target'
-                sh 'java -jar mai-api-1.0.0-SNAPSHOT.jar'
+                sh 'sudo su systemctl restart heystyles_mail'
             }
          }
     }
