@@ -14,11 +14,10 @@ pipeline {
                  sh 'mvn install'
             }
         }
-         stage ('deploy') {
-            steps {
-                sh 'sudo su'
-                sh 'systemctl restart heystyles_mail.service'
-            }
-         }
+        stage ('deploy') {
+           steps {
+                sh './var/lib/jenkins/scripts/heystyles_mail.sh'
+           }
+        }
     }
 }
