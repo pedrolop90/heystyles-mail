@@ -20,5 +20,10 @@ pipeline {
                  sh 'mvn install'
              }
          }
+         stage ('deploy') {
+            steps {
+                sh 'systemctl restart heystyles_mail'
+            }
+         }
     }
 }
